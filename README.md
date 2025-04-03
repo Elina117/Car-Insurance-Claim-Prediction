@@ -1,65 +1,65 @@
 # Car Insurance Claim Prediction
 
-## 📌 Описание проекта
-Проект посвящен предсказанию страховых выплат по автомобильным полисам. Используется набор данных с Kaggle, содержащий информацию о полисах, характеристиках автомобилей и их владельцев. Целевая переменная — факт подачи страхового иска в течение следующих 6 месяцев.
+## 📌 Project Description
+The project is dedicated to predicting insurance claims for car policies. It uses a dataset from Kaggle containing information about policies, car characteristics, and car owners. The target variable indicates whether the policyholder files a claim within the next 6 months.
 
-## 📊 Описание данных
+## 📊 Data Description
 
-Датасет содержит следующие признаки:
-- **policy tenure** — срок действия полиса,
-- **age of the car** — возраст автомобиля,
-- **age of the car owner** — возраст владельца,
-- **population density** — плотность населения города,
-- **make and model** — марка и модель автомобиля,
-- **power, engine type** — мощность и тип двигателя,
-- **и другие параметры**.
+The dataset contains the following features:
+- **policy tenure** — the duration of the policy,
+- **age of the car** — the age of the car,
+- **age of the car owner** — the age of the car owner,
+- **population density** — the population density of the city,
+- **make and model** — the make and model of the car,
+- **power, engine type** — the power and type of the engine,
+- **and other parameters**.
 
-Целевая переменная (**target**) указывает, подаст ли владелец автомобиля страховой иск в ближайшие 6 месяцев (1 - да, 0 - нет).
+The target variable (**target**) indicates whether the car owner files an insurance claim in the next 6 months (1 - yes, 0 - no).
 
-## 🔍 Предобработка данных
-1. Анализ данных и проверка на пропущенные значения.
-2. Кодирование категориальных признаков с помощью **OHE (One-Hot Encoding)** и **MTE (Mean Target Encoding)**.
-3. Обнаружение и обработка выбросов.
-4. Создание отдельного класса `BaseEstimator` для трансформации категориальных признаков.
-5. Анализ распределения признаков.
-6. Генерация новых фичей.
-7. Проверка корреляции и удаление сильно скоррелированных признаков.
-8. Проверка на квазиконстантные признаки.
-9. Балансировка выборки с помощью **SMOTE** (Synthetic Minority Over-sampling Technique).
+## 🔍 Data Preprocessing
+1. Data analysis and checking for missing values.
+2. Encoding categorical features using **OHE (One-Hot Encoding)** and **MTE (Mean Target Encoding)**.
+3. Detection and handling of outliers.
+4. Creating a separate `BaseEstimator` class for transforming categorical features.
+5. Analyzing feature distributions.
+6. Generating new features.
+7. Checking correlations and removing highly correlated features.
+8. Checking for quasi-constant features.
+9. Balancing the dataset using **SMOTE** (Synthetic Minority Over-sampling Technique).
 
-## 🏆 Обучение моделей
-Обучены и протестированы следующие модели:
+## 🏆 Model Training
+The following models were trained and tested:
 - **RandomForest**
 - **XGBoost**
 - **LightGBM**
 
-Подбор гиперпараметров проводился с помощью **Grid Search**. Для оценки качества моделей использовались метрики:
+Hyperparameter tuning was performed using **Grid Search**. The models' performance was evaluated using the following metrics:
 - **Precision**
 - **Recall**
 - **F1-score**
 - **Accuracy**
 
-### 📈 Результаты
-Лучшая модель: **LightGBM**
+### 📈 Results
+Best model: **LightGBM**
 - **F1-score:** 0.96
 - **Accuracy:** 0.96
-- **ROC AUC:** 0.9766 (на тестовой выборке)
+- **ROC AUC:** 0.9766 (on the test set)
 
-Была построена **ROC-кривая**, и рассчитана площадь под ней (AUC).
+A **ROC curve** was created, and the area under the curve (AUC) was calculated.
 
-## 🚀 Деплой модели
-Был разработан **API-сервис** на базе `FastAPI`, который позволяет получать предсказания по номеру страхового полиса через HTTP-запросы.
+## 🚀 Model Deployment
+A **FastAPI-based API service** was developed, which allows getting predictions using the insurance policy number through HTTP requests.
 
-## 📌 Запуск проекта
-### Установка зависимостей
+## 📌 Running the Project
+### Installing dependencies
 ```bash
 pip install -r requirements.txt
 ```
-### Запуск сервиса
+### Running the service
 ```bash
 uvicorn app:app --reload
 ```
 
 ## 📌 Контакты
-Если у вас есть вопросы или предложения, вы можете связаться со мной через GitHub Issues или Telegram: [@elina_glmv](https://t.me/elina_glmv)
+If you have any questions or suggestions, you can reach out to me via GitHub Issues or Telegram: [@elina_glmv](https://t.me/elina_glmv)
 
