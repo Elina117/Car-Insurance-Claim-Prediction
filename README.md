@@ -4,7 +4,6 @@
 The project is dedicated to predicting insurance claims for car policies. It uses a dataset from Kaggle containing information about policies, car characteristics, and car owners. The target variable indicates whether the policyholder files a claim within the next 6 months
 
 ## 📌 Kaggle Competition
-## 📌 Kaggle Competition
 The dataset used in this project is from the Kaggle competition: [Car Insurance Claim Prediction - Classification](https://www.kaggle.com/datasets/ifteshanajnin/carinsuranceclaimprediction-classification)
 
 
